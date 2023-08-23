@@ -4,6 +4,7 @@ This repo contains tutorials and instructions on how to perform camera calibrati
 
 ## Content
 
+- Prerequsites
 - Reading from Intel RealSense Camera
 - AprilTag Detection
 - AprilTag Bundle Adjustment
