@@ -1,13 +1,18 @@
-#include <pybind11/pybind11.h>
-
+#include <pybind11/stl.h>
+#include <pybind11/numpy.h>
 #include "read_fr3_state.h"
 
-namespace py = pybind11;
-
-franka::RobotState read_state(const std::string& robot_ip) {
+std::array<double, 7> read_state_cpp(const std::string& robot_ip) {
     franka::Robot robot(robot_ip);
     franka::RobotState state = robot.readOnce();
-    return state;
+    std::array<double, 7> q = state.q;
+
+    return q;
+}
+
+pybind11::array_t<double> read_state(const std::string& robot_ip) {
+    auto arr = read_state_cpp(robot_ip);
+    return pybind11::array_t<double>(arr.size(), arr.data());
 }
 
 PYBIND11_MODULE(read_fr3_state, handle)
