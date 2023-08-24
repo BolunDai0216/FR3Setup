@@ -1,0 +1,3 @@
+[submodule "fr3_pose_publisher/external/pybind11"]
+	path = fr3_pose_publisher/external/pybind11
+	url = https://github.com/pybind/pybind11.git
