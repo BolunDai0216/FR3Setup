@@ -1,8 +1,9 @@
-import pinocchio as pin
+import numpy as np
 import rospy
 import tf
 from FR3Env import getDataPath
 from pinocchio.robot_wrapper import RobotWrapper
+from scipy.spatial.transform import Rotation
 
 
 class FR3PosePublisher:
@@ -31,13 +32,13 @@ class FR3PosePublisher:
         """
         self._update_pinocchio(q)
 
-        # get hand frame position and orientation
+        # # get hand frame position and orientation
         hand_frame = self.robot.data.oMf[self.hand_id]
         t = hand_frame.translation
         R = hand_frame.rotation
-        q = pin.Quaternion(R)  # [x, y, z, w]
+        quat = Rotation.from_matrix(R).as_quat()  # [x, y, z, w]
 
-        self.broadcaster.sendTransform(t, q, rospy.Time.now(), self.prefix+"fr3_hand", self.prefix+"fr3_link0")
+        self.broadcaster.sendTransform(t, quat, rospy.Time.now(), self.prefix+"fr3_hand", self.prefix+"fr3_link0")
     
     def _update_pinocchio(self, q):
         self.robot.computeJointJacobians(q)
