@@ -6,7 +6,7 @@ from pinocchio.robot_wrapper import RobotWrapper
 
 
 class FR3PosePublisher:
-    def __init__(self, node_name='fr3_pose_publisher'):
+    def __init__(self, node_name='fr3_pose_publisher', prefix="white"):
         # create FR3 pinocchio model
         fr3env_dir = getDataPath()
         robot_URDF = fr3env_dir + "/robots/fr3.urdf"
@@ -15,8 +15,10 @@ class FR3PosePublisher:
         # get frame id
         self.hand_id = self.robot.model.getFrameId("fr3_hand")
 
+        # create ROS node
         rospy.init_node(node_name)
         self.broadcaster = tf.TransformBroadcaster()
+        self.prefix = prefix + "_"
 
         # sleep to ensure the node is ready
         rospy.sleep(0.1)   
@@ -35,7 +37,7 @@ class FR3PosePublisher:
         R = hand_frame.rotation
         q = pin.Quaternion(R)  # [x, y, z, w]
 
-        self.broadcaster.sendTransform(t, q, rospy.Time.now(), "hand_frame", "base_frame")
+        self.broadcaster.sendTransform(t, q, rospy.Time.now(), self.prefix+"fr3_hand", self.prefix+"fr3_link0")
     
     def _update_pinocchio(self, q):
         self.robot.computeJointJacobians(q)
