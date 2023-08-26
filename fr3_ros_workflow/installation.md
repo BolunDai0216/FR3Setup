@@ -74,7 +74,7 @@ Then install any missing dependencies and build the package:
 rosdep install --from-paths src --ignore-src --rosdistro noetic -y --skip-keys libfranka
 catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=${FRANKA_WS}/libfranka/build
 catkin build
-source install/setup.bash
+source devel/setup.bash
 ```
 After installation, unlock the robot, enable FCI, and run the following for a simple test of the framework. The `robot_ip` should be changed to the IP address of the particular robot you are trying to control:
 
