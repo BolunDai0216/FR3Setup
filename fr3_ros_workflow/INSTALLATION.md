@@ -3,7 +3,7 @@ After setting up the network and activating the FCI interface as described [here
 
 - Compile and install the appropriate version of `libfranka`
 - Make a catkin workspace and compile the `franka_ros`
-- Adding the [Moveit](https://ros-planning.github.io/moveit_tutorials/) to the workspace
+- Adding the [MoveIt](https://ros-planning.github.io/moveit_tutorials/) to the workspace
 
 Throughout this tutorial, we assume the `FRANKA_WS` environment variable has been set to our working directory: 
 
@@ -49,15 +49,17 @@ cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF ..
 cmake --build .
 cpack -G DEB
 ```
+
 finally, install the library:
 
 ```bash
 cpack -G DEB
 sudo dpkg -i libfranka*.deb
 ```
+
 ## Installing franka_ros
 
-We assume that ROS Noetic has already been installed. If not, follow through the steps [here](http://wiki.ros.org/noetic/Installation/Ubuntu) to install it. Then we need to add a catkin workspace:
+We assume that ROS Noetic has already been installed. If not, follow through the steps [here](http://wiki.ros.org/noetic/Installation/Ubuntu) to install it. Then, we need to add a catkin workspace:
 
 ```bash
 cd ${FRANKA_WS}
@@ -72,6 +74,7 @@ By default, this will check out the newest release of franka_ros. If you want to
 ```bash
 git checkout <version>
 ```
+
 Then install any missing dependencies and build the package:
 
 ```bash
@@ -80,6 +83,7 @@ catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Re
 catkin build
 source devel/setup.bash
 ```
+
 After installation, unlock the robot, enable FCI, and run the following for a simple test of the framework. The `robot_ip` should be changed to the IP address of the particular robot you are trying to control:
 
 ```bash
@@ -88,10 +92,11 @@ roslaunch franka_example_controllers move_to_start.launch robot_ip:=<robot_ip>
 
 If successful, the robot moves to the home position and you get the following message:
 
-```
+```bash
 move_to_start: Successfully moved in to start pose
 ```
-## Installing Moveit
+
+## Installing MoveIt
 Finally, we need to install `moveit`. 
 
 Install catkin the ROS build system:
@@ -99,12 +104,14 @@ Install catkin the ROS build system:
 ```bash
 sudo apt install ros-${ROS_DISTRO}-catkin python3-catkin-tools
 ```
+
 Then Install `wstool`:
 
 ```bash
 sudo apt install python3-wstool
 ```
-Add the Moveit library to your workspace:
+
+Add the MoveIt library to your workspace:
 
 ```bash
 cd ${FRANKA_WS}/catkin_ws/src
@@ -115,12 +122,14 @@ wstool update -t .
 git clone https://github.com/ros-planning/moveit_tutorials.git -b master
 git clone https://github.com/ros-planning/panda_moveit_config.git -b ${ROS_DISTRO}-devel
 ```
+
 Install the dependencies:
 
 ```bash
 cd ${FRANKA_WS}/catkin_ws/src
 rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
 ```
+
 Finally, compile the library:
 
 ```bash
@@ -134,13 +143,16 @@ Finally, to test the system, run the following with `robot_ip` set to the IP add
 ```bash
 roslaunch panda_moveit_config franka_control.launch robot_ip:=<robot_ip>
 ```
-### Adding the Moveit Calibration Toolbox
-For eye-in-hand and eye-on-base calibration of the cameras used with your robotic setup, you would need to add the Moveit calibration toolbox. First, clone the source code into your catkin workspace `src` directory:
+
+### Adding the MoveIt Calibration Toolbox
+
+For eye-in-hand and eye-on-base calibration of the cameras used with your robotic setup, you would need to add the MoveIt calibration toolbox. First, clone the source code into your catkin workspace's `src` directory:
 
 ```bash
 cd ${FRANKA_WS}/catkin_ws/src
 git clone git@github.com:ros-planning/moveit_calibration.git
 ```
+
 Then, make sure you have the appropriate dependencies and build the package:
 
 ```bash
