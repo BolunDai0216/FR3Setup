@@ -1,8 +1,9 @@
-# Installation Guide for ROS1
-After setting up the network and activating the FCI interface as described [here](), we need to install the following items for using the robot via ROS1:
+# Installation Guide for ROS
+
+After setting up the network and activating the FCI interface as described [here](), we need to install the following items for using the robot via ROS:
 
 - Compile and install the appropriate version of `libfranka`
-- Make a catkin workspace and compile the `franka_ros`
+- Make a catkin workspace and compile `franka_ros`
 - Adding the [MoveIt](https://ros-planning.github.io/moveit_tutorials/) to the workspace
 
 Throughout this tutorial, we assume the `FRANKA_WS` environment variable has been set to our working directory: 
@@ -12,7 +13,8 @@ export FRANKA_WS=/path/to/desired/workspace
 ```
 
 ## Compile and Install libfranka
-First, in order to make sure everything is clean, remove all previously installed versions of the library:
+
+First, in order to make sure everything is clean, remove all previously installed versions of `libfranka`:
 
 ```bash
 sudo apt remove "*libfranka*"
@@ -24,7 +26,7 @@ Then install the required tools and libraries:
 sudo apt install build-essential cmake git libpoco-dev libeigen3-dev
 ```
 
-Then clone the appropriate version of libfranka:
+Then clone the appropriate version of `libfranka`:
 
 **For Panda**
 
@@ -69,7 +71,7 @@ source /opt/ros/noetic/setup.sh
 catkin_init_workspace src
 git clone --recursive https://github.com/frankaemika/src/franka_ros
 ```
-By default, this will check out the newest release of `franka_ros`. If you want to build a particular version of `franka_ros` instead, check out the corresponding Git tag:
+By default, this will check out the newest release of `franka_ros`. If you want to build a particular version of `franka_ros` instead, check out the corresponding git tag:
 
 ```bash
 git checkout <version>
@@ -96,8 +98,11 @@ If successful, the robot moves to the home position and you get the following me
 move_to_start: Successfully moved in to start pose
 ```
 
+**Note**: you may need to manually move the robot away from the home position to visually see the motion of the robot.
+
 ## Installing MoveIt
-Finally, we need to install MoveIt. First, install `catkin-tools`:
+
+Finally, we need to install `MoveIt`. First, install `catkin-tools`:
 
 ```bash
 sudo apt install ros-${ROS_DISTRO}-catkin python3-catkin-tools
@@ -109,7 +114,7 @@ Then, Install `wstool`:
 sudo apt install python3-wstool
 ```
 
-Clone MoveIt into your workspace:
+Clone `MoveIt` into your workspace:
 
 ```bash
 cd ${FRANKA_WS}/catkin_ws/src
