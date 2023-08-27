@@ -71,7 +71,7 @@ git checkout <version>
 Then install any missing dependencies and build the package:
 
 ```bash
-rosdep install --from-paths src --ignore-src --rosdistro noetic -y --skip-keys libfranka
+rosdep install --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y --skip-keys libfranka
 catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=${FRANKA_WS}/libfranka/build
 catkin build
 source devel/setup.bash
@@ -93,7 +93,7 @@ Finally, we need to install `moveit`.
 Install catkin the ROS build system:
 
 ```bash
-sudo apt install ros-noetic-catkin python3-catkin-tools
+sudo apt install ros-${ROS_DISTRO}-catkin python3-catkin-tools
 ```
 Then Install `wstool`:
 
@@ -109,13 +109,13 @@ wstool merge -t . https://raw.githubusercontent.com/ros-planning/moveit/master/m
 wstool remove moveit_tutorials
 wstool update -t .
 git clone https://github.com/ros-planning/moveit_tutorials.git -b master
-git clone https://github.com/ros-planning/panda_moveit_config.git -b noetic-devel
+git clone https://github.com/ros-planning/panda_moveit_config.git -b ${ROS_DISTRO}-devel
 ```
 Install the dependencies:
 
 ```bash
 cd ${FRANKA_WS}/catkin_ws/src
-rosdep install -y --from-paths . --ignore-src --rosdistro noetic
+rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
 ```
 Finally, compile the library:
 
@@ -130,5 +130,17 @@ Finally, to test the system, run the following with `robot_ip` set to the IP add
 ```bash
 roslaunch panda_moveit_config franka_control.launch robot_ip:=<robot_ip>
 ```
+### Adding the Moveit Calibration Toolbox
+For eye-in-hand and eye-on-base calibration of the cameras used with your robotic setup, you would need to add the Moveit calibration toolbox. First, clone the source code into your catkin workspace `src` directory:
 
+```bash
+cd ${FRANKA_WS}/catkin_ws/src
+git clone git@github.com:ros-planning/moveit_calibration.git
+```
+Then, make sure you have the appropriate dependencies and build the package:
 
+```bash
+cd ${FRANKA_WS}/catkin_ws
+rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO}
+catkin build
+```
