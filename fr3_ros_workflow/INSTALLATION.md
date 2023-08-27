@@ -59,7 +59,7 @@ cpack -G DEB
 sudo dpkg -i libfranka*.deb
 ```
 
-## Installing franka_ros
+## Install franka_ros
 
 We assume that ROS Noetic has already been installed. If not, follow through the steps [here](http://wiki.ros.org/noetic/Installation/Ubuntu) to install it. Then, we need to add a catkin workspace:
 
@@ -100,7 +100,7 @@ move_to_start: Successfully moved in to start pose
 
 **Note**: you may need to manually move the robot away from the home position to visually see the motion of the robot.
 
-## Installing MoveIt
+## Install MoveIt
 
 Finally, we need to install `MoveIt`. First, install `catkin-tools`:
 
@@ -147,7 +147,7 @@ Finally, to test the system, run the following with `robot_ip` set to the IP add
 roslaunch panda_moveit_config franka_control.launch robot_ip:=<robot_ip>
 ```
 
-### Adding the MoveIt Calibration Toolbox
+### Install MoveIt Calibration Toolbox
 
 For eye-in-hand and eye-on-base calibration of the cameras used with your robotic setup, you would need to add the MoveIt calibration toolbox. First, clone the source code into your catkin workspace's `src` directory:
 
