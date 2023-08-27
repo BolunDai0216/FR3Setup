@@ -97,21 +97,19 @@ move_to_start: Successfully moved in to start pose
 ```
 
 ## Installing MoveIt
-Finally, we need to install `moveit`. 
-
-Install catkin the ROS build system:
+Finally, we need to install MoveIt. First, install `catkin-tools`:
 
 ```bash
 sudo apt install ros-${ROS_DISTRO}-catkin python3-catkin-tools
 ```
 
-Then Install `wstool`:
+Then, Install `wstool`:
 
 ```bash
 sudo apt install python3-wstool
 ```
 
-Add the MoveIt library to your workspace:
+Clone MoveIt into your workspace:
 
 ```bash
 cd ${FRANKA_WS}/catkin_ws/src
@@ -150,7 +148,7 @@ For eye-in-hand and eye-on-base calibration of the cameras used with your roboti
 
 ```bash
 cd ${FRANKA_WS}/catkin_ws/src
-git clone git@github.com:ros-planning/moveit_calibration.git
+git clone https://github.com/ros-planning/moveit_calibration.git
 ```
 
 Then, make sure you have the appropriate dependencies and build the package:
