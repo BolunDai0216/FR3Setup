@@ -3,8 +3,8 @@
 After setting up the network and activating the FCI interface as described [here](), we need to install the following items for using the robot via ROS:
 
 - Compile and install the appropriate version of `libfranka`
-- Make a catkin workspace and compile `franka_ros`
-- Adding the [MoveIt](https://ros-planning.github.io/moveit_tutorials/) to the workspace
+- Create a catkin workspace and compile `franka_ros`
+- Adding [MoveIt](https://ros-planning.github.io/moveit_tutorials/) to the created catkin workspace
 
 Throughout this tutorial, we assume the `FRANKA_WS` environment variable has been set to our working directory: 
 
