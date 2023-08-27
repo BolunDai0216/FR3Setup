@@ -130,7 +130,7 @@ Finally, to test the system, run the following with `robot_ip` set to the IP add
 ```bash
 roslaunch panda_moveit_config franka_control.launch robot_ip:=<robot_ip>
 ```
-### Adding The Moveit Calibration Toolbox
+### Adding the Moveit Calibration Toolbox
 For eye-in-hand and eye-on-base calibration of the cameras used with your robotic setup, you would need to add the Moveit calibration toolbox. First, clone the source code into your catkin workspace `src` directory:
 
 ```bash
