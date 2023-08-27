@@ -11,7 +11,7 @@ Throughout this tutorial, we assume the `FRANKA_WS` environment variable has bee
 export FRANKA_WS=<path to the desired workspace>
 ```
 
-## Compile and Install the libfranka
+## Compile and Install libfranka
 First, in order to make sure everything is clean, remove all previously installed versions of the library:
 
 ```bash
@@ -51,7 +51,7 @@ finally, install the library:
 cpack -G DEB
 sudo dpkg -i libfranka*.deb
 ```
-## Installing the franka_ros
+## Installing franka_ros
 
 We assume that ROS Noetic has already been installed. If not, follow through the steps [here](http://wiki.ros.org/noetic/Installation/Ubuntu) to install it. Then we need to add a catkin workspace:
 
@@ -87,15 +87,15 @@ If successful, the robot moves to the home position and you get the following me
 ```
 move_to_start: Successfully moved in to start pose
 ```
-## Installing the Moveit Library
-Finally, we need to install the moveit library. 
+## Installing Moveit
+Finally, we need to install `moveit`. 
 
 Install catkin the ROS build system:
 
 ```bash
 sudo apt install ros-${ROS_DISTRO}-catkin python3-catkin-tools
 ```
-Then Install wstool:
+Then Install `wstool`:
 
 ```bash
 sudo apt install python3-wstool

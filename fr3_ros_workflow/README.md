@@ -4,7 +4,7 @@ This set of documents describes the system setup and calibration procedure for t
 ## System Setup
 
 - [Networks Setup](../network_setting/README.md)
-- [Software Setup](installation.md)
+- [Software Setup](INSTALLATION.md)
 - [Camera Setup]()
 - [Vicon Setup]()
 - [Apriltag ROS Setup]()
