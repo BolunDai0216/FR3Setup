@@ -1,14 +1,14 @@
-# Installation Guide for ROS1 Workflow 
-After setting up the network and activating the FCI interface as described [here](), we need to install the following items for using the robot through ROS1:
+# Installation Guide for ROS1
+After setting up the network and activating the FCI interface as described [here](), we need to install the following items for using the robot via ROS1:
 
-- Compile and install the appropriate version of libfranka
-- Make a catkine workspace and compile the franka_ros
+- Compile and install the appropriate version of `libfranka`
+- Make a catkin workspace and compile the `franka_ros`
 - Adding the [Moveit](https://ros-planning.github.io/moveit_tutorials/) to the workspace
 
 Throughout this tutorial, we assume the `FRANKA_WS` environment variable has been set to our working directory: 
 
 ```bash
-export FRANKA_WS=<path to the desired workspace>
+export FRANKA_WS=/path/to/desired/workspace
 ```
 
 ## Compile and Install libfranka
@@ -17,12 +17,21 @@ First, in order to make sure everything is clean, remove all previously installe
 ```bash
 sudo apt remove "*libfranka*"
 ```
+
 Then install the required tools and libraries:
 
 ```bash 
 sudo apt install build-essential cmake git libpoco-dev libeigen3-dev
 ```
+
 Then clone the appropriate version of libfranka:
+
+**For Panda**
+
+```bash
+cd ${FRANKA_WS}
+git clone --recursive https://github.com/frankaemika/libfranka
+```
 
 **For FR3:**
 
@@ -30,12 +39,7 @@ Then clone the appropriate version of libfranka:
 cd ${FRANKA_WS}
 git clone --recursive https://github.com/frankaemika/libfranka --branch 0.10.0
 ```
-**For Panda**
 
-```bash
-cd ${FRANKA_WS}
-git clone --recursive https://github.com/frankaemika/libfranka
-```
 Then compile the library as follows:
 
 ```bash
