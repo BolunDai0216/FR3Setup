@@ -6,7 +6,7 @@ This set of documents describes the system setup and calibration procedure for t
 - [ROS noetic installation and Virtual Machine Set up](ROSSETUP.md)
 - [Networks Setup](../network_setting/README.md)
 - [Software Setup](INSTALLATION.md)
-- [Camera Setup]()
+- [Camera Setup](CAMERASETUP.md)
 - [Vicon Setup]()
 - [Apriltag ROS Setup]()
   
