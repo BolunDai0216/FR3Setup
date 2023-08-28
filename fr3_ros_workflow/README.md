@@ -8,7 +8,7 @@ This set of documents describes the system setup and calibration procedure for t
 - [Software Setup](INSTALLATION.md)
 - [Camera Setup](CAMERASETUP.md)
 - [Vicon Setup]()
-- [Apriltag ROS Setup]()
+- [Apriltag ROS Setup](APRILTAG.md)
   
 ## Calibration
 
