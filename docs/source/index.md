@@ -20,5 +20,6 @@ hide-toc: true
 :hidden:
 :maxdepth: 2
 
+prerequisites/index
 camera_calibration/index
 ```
