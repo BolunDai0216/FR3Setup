@@ -26,3 +26,11 @@ The hand-to-eye calibration is used to find the transformation matrix between th
 Similar to the eye-in-hand case, here the value of $\mathbf{A}$ and $\mathbf{B}$ can be obtained using forward kinematics and camera measurements, respectively. The goal is to find $\mathbf{X}$, which represents the transformation matrix between the end-effector (hand) frame and the checkerboard frame. Then, the transformation matrix between the camera frame and the base frame can be computed as
 
 $$^\mathrm{camera}\mathbf{T}_\mathrm{base} = {}^\mathrm{camera}\mathbf{T}_\mathrm{board}{}^\mathrm{board}\mathbf{T}_\mathrm{hand}{}^\mathrm{hand}\mathbf{T}_\mathrm{base}$$
+
+```bash
+roslaunch gray_base_to_white_camera.launch
+python3 generate_launch_file.py --parent "/camera_color_optical_frame" --child "/panda_link0" --filename "white_camera_to_gray_base" --parentName "camera_color_optical_frame" --childName "grey_panda_link0"
+roslaunch white_hand_to_white_camera.launch
+roslaunch white_camera_to_gray_base.launch
+python3 generate_launch_file.py --parent "/grey_panda_link0" --child "/panda_link0" --filename "gray_base_to_white_base" --parentName "grey_panda_link0" --childName "white_panda_link0"
+```
