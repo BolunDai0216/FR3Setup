@@ -100,9 +100,9 @@ move_to_start: Successfully moved in to start pose
 
 **Note**: you may need to manually move the robot away from the home position to visually see the motion of the robot.
 
-## Install MoveIt
+## Install MoveIt (Optional)
 
-Finally, we need to install `MoveIt`. First, install `catkin-tools`:
+Finally, for calibration purposes, we need to install `MoveIt`. First, install `catkin-tools`:
 
 ```bash
 sudo apt install ros-${ROS_DISTRO}-catkin python3-catkin-tools
