@@ -71,6 +71,9 @@ Then, to get the relative transformation of the white FR3 base in the gray FP3 b
 ```bash
 roslaunch gray_base_to_white_camera.launch
 python3 generate_launch_file.py --parent "/camera_color_optical_frame" --child "/panda_link0" --filename "white_camera_to_gray_base" --parentName "camera_color_optical_frame" --childName "grey_panda_link0"
+
+# Optional step to format the launch file
+xmllint --format white_camera_to_gray_base.launch --output white_camera_to_gray_base.launch
 ```
 
 ```{figure} ../imgs/post_process_step2.png
@@ -87,6 +90,9 @@ This will generate a launch file called `white_camera_to_gray_base.launch` in th
 roslaunch white_hand_to_white_camera.launch
 roslaunch white_camera_to_gray_base.launch
 python3 generate_launch_file.py --parent "/grey_panda_link0" --child "/panda_link0" --filename "gray_base_to_white_base" --parentName "grey_panda_link0" --childName "white_panda_link0"
+
+# Optional step to format the launch file
+xmllint --format gray_base_to_white_base.launch --output gray_base_to_white_base.launch
 ```
 
 these commands will generate a launch file called `gray_base_to_white_base.launch` in the current directory which gives us the transformation between the white FR3 base and the gray FP3 base.

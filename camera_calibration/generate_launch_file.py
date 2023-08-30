@@ -52,7 +52,7 @@ def main():
     )
 
     # lookupTransform(target_frame, source_frame) -> ^{target}T_{source}
-    # lookupTransform(parent_frame, child_frame) -> ^{child}T_{parent}
+    # lookupTransform(parent_frame, child_frame) -> ^{parent}T_{child}
     (trans, rot) = listener.lookupTransform(parent_frame, child_frame, rospy.Time(0))
 
     node_name = args.filename
