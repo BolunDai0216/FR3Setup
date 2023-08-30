@@ -25,12 +25,9 @@ def create_launch_file(node_name, pkg_name, type_name, file_name, args):
 
 
 def main():
-    """
-    (1) connect to the robot.
-    (2) run `roslaunch panda_moveit_config bi_arm.launch robot_ip:=10.42.0.3`
-    (3) run `python3 tf_listener.py`
-    """
-    parser = argparse.ArgumentParser("Generate a launch file that published the tf of parent -> child")
+    parser = argparse.ArgumentParser(
+        "Generate a launch file that published the tf of parent -> child"
+    )
     parser.add_argument("--parent", type=str, required=True)
     parser.add_argument("--child", type=str, required=True)
     parser.add_argument("--filename", type=str, required=True)
@@ -59,9 +56,20 @@ def main():
     (trans, rot) = listener.lookupTransform(parent_frame, child_frame, rospy.Time(0))
 
     node_name = args.filename
-    launchfile_args = " ".join(map(str, trans)) + "   " + " ".join(map(str, rot)) + f" {args.parentName} {args.childName}"
-    
-    create_launch_file(node_name, "tf2_ros", "static_transform_publisher", args.filename, launchfile_args)
+    launchfile_args = (
+        " ".join(map(str, trans))
+        + "   "
+        + " ".join(map(str, rot))
+        + f" {args.parentName} {args.childName}"
+    )
+
+    create_launch_file(
+        node_name,
+        "tf2_ros",
+        "static_transform_publisher",
+        args.filename,
+        launchfile_args,
+    )
 
     print(f"*** Created file {args.filename}.launch ***")
 
