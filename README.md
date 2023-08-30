@@ -1,4 +1,6 @@
-# How To Calibrate
+<p align="center">
+  <img src="imgs/logo.png" alt="logo" style="width:100%;"/>
+</p>
 
 This repo contains tutorials and instructions on how to perform camera calibrations for the FR3 robot.
 
