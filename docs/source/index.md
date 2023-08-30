@@ -17,6 +17,7 @@ hide-toc: true
 
 ```{toctree}
 :caption: 'Contents:'
+:hidden:
 :maxdepth: 2
 
 camera_calibration/index
