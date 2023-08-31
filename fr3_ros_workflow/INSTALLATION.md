@@ -69,7 +69,7 @@ mkdir -p catkin_ws/src
 cd catkin_ws
 source /opt/ros/noetic/setup.sh
 catkin_init_workspace src
-git clone --recursive https://github.com/frankaemika/src/franka_ros
+git clone --recursive https://github.com/frankaemika/franka_ros.git
 ```
 By default, this will check out the newest release of `franka_ros`. If you want to build a particular version of `franka_ros` instead, check out the corresponding git tag:
 
