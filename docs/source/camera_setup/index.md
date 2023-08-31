@@ -4,7 +4,7 @@ This section describes how to set up Intel RealSense D435 cameras for FR3. First
 
 ## Check the SDK and Firmware Version
 
-To ensure everything works, we first need to check the SDK version we plan to install the recommended firmware version. 
+To ensure everything works, we first need to check the SDK version we plan to install the recommended firmware version. The last version of `realsense2_camera` that supports ROS is `v2.3.2` which corresponds to the firmware version `5.13.0.50`. The firmware can be updated using the firmware update tools.
 
 ## ROS Package Installation
 
