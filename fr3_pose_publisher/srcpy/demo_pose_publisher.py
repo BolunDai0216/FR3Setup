@@ -10,7 +10,7 @@ def main():
     fr3_pose_publisher = FR3PosePublisher()
 
     for i in range(10000):
-        joint_pos = read_fr3_state.read_state("10.42.0.4")
+        joint_pos = read_fr3_state.read_state("10.42.0.3")
         q = np.concatenate([joint_pos, np.zeros(2)])
         fr3_pose_publisher.publish(q)
         time.sleep(0.01)

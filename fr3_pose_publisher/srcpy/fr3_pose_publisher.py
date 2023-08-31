@@ -30,16 +30,30 @@ class FR3PosePublisher:
 
         :param q: seven joint angles + two finger joint angles
         """
-        self._update_pinocchio(q)
-
-        # # get hand frame position and orientation
-        hand_frame = self.robot.data.oMf[self.hand_id]
-        t = hand_frame.translation
-        R = hand_frame.rotation
-        quat = Rotation.from_matrix(R).as_quat()  # [x, y, z, w]
+        t, quat = self.get_hand_pose(q, quat=True)
 
         self.broadcaster.sendTransform(t, quat, rospy.Time.now(), self.prefix+"fr3_hand", self.prefix+"fr3_link0")
     
     def _update_pinocchio(self, q):
         self.robot.computeJointJacobians(q)
         self.robot.framesForwardKinematics(q)
+    
+    def get_hand_pose(self, q, quat=True):
+        """
+        Publish the hand frame position and orientation to /tf
+
+        :param q: seven joint angles + two finger joint angles
+        """
+        self._update_pinocchio(q)
+
+        # get hand frame position and orientation
+        hand_frame = self.robot.data.oMf[self.hand_id]
+        t = hand_frame.translation
+        R = hand_frame.rotation
+
+        if quat:
+            quat = Rotation.from_matrix(R).as_quat()
+
+            return t, quat
+        else:
+            return t, R
