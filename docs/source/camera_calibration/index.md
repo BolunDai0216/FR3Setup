@@ -89,13 +89,13 @@ This will generate a launch file called `white_camera_to_gray_base.launch` in th
 ```bash
 roslaunch white_hand_to_white_camera.launch
 roslaunch white_camera_to_gray_base.launch
-python3 generate_launch_file.py --parent "/grey_panda_link0" --child "/panda_link0" --filename "gray_base_to_white_base" --parentName "grey_panda_link0" --childName "white_panda_link0"
+python3 generate_launch_file.py --parent "/panda_link0" --child "/gray_panda_link0" --filename "white_base_to_gray_base" --parentName "white_panda_link0" --childName "gray_panda_link0"
 
 # Optional step to format the launch file
-xmllint --format gray_base_to_white_base.launch --output gray_base_to_white_base.launch
+xmllint --format white_base_to_gray_base.launch --output white_base_to_gray_base.launch
 ```
 
-these commands will generate a launch file called `gray_base_to_white_base.launch` in the current directory which gives us the transformation between the white FR3 base and the gray FP3 base.
+these commands will generate a launch file called `white_base_to_gray_base.launch` in the current directory which gives us the transformation between the white FR3 base and the gray FP3 base.
 
 ```{figure} ../imgs/post_process_step3.png
 :alt: Post Processing Step 3
@@ -104,3 +104,14 @@ these commands will generate a launch file called `gray_base_to_white_base.launc
 :align: center
 Transformation obtained applying the steps above.
 ```
+
+## Deploying the Calibration in the Two Arm Setup
+
+Now that we assume that the white FR3's joint angle has changed, and we want to find the transformation between the gray FP3 base and the camera frame that is rigidly attached to the end-effector of the white FR3. To do this, we first launch two launch files
+
+```bash
+roslaunch white_base_to_gray_base.launch
+roslaunch white_hand_to_white_camera.launch
+```
+
+which creates all the TF transformations required. We can then query TF to obtain the transformation ${}^\mathrm{camera}\mathbf{T}_\mathrm{gray\ base}$.
