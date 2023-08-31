@@ -22,5 +22,6 @@ hide-toc: true
 
 network/index
 prerequisites/index
+camera_setup/index
 camera_calibration/index
 ```
