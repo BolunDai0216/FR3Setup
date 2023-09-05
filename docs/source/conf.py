@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = "FR3Setup"
-copyright = "2023, Bolun Dai"
-author = "Bolun Dai"
+copyright = "2023, Bolun Dai, Rooholla Khorrambakt, Pranay Gupta"
+author = "Bolun Dai, Rooholla Khorrambakt, Pranay Gupta"
 
 
 # -- General configuration ---------------------------------------------------
