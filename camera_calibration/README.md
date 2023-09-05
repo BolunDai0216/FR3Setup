@@ -35,7 +35,9 @@ roslaunch realsense2_camera rs_camera.launch color_width:=1280 color_height:=720
 
 **9.** Click on Create Target and Print it out.
 
-**10.**Choose the Image topic and Camera info topic where the image data is being published under the Target Pose Detection
+<img src="https://github.com/PranayG/HowToCalibrate/assets/9202531/cf89394d-5165-40e8-9154-1d640ec46cc5" alt="target" width="400"/>
+
+**10.** Choose the Image topic and Camera info topic where the image data is being published under the Target Pose Detection
 
 `image topic : /camera/color_image/raw
 camera info topic : /camera/color/camera_info`
@@ -43,6 +45,7 @@ camera info topic : /camera/color/camera_info`
 **11.** Under the Context tab , set the Sensor Configuration as the appropriate configuration you are performing. 
 
 **12.** Select the correct Frames of the sensor, object, end-effector and Robot base frame.
+<img src="https://github.com/PranayG/HowToCalibrate/assets/9202531/f8829668-0efb-4ec6-8983-875171f43cd9" alt="Context_HandEye" width="400"/>
 
 `Sensor Frame : camera_color_optical_frame`
 
@@ -57,6 +60,8 @@ camera info topic : /camera/color/camera_info`
 **14.** In RViz, add  `By topic > /handEye_calibration > /target_detection > Image > raw`
 
 **15.** Take around 15 Samples of different configurations under the Calibration tab in the HandEyeCalibration and click on "Take Sample" for each configuration by manually moving the robot.
+
+<img src="https://github.com/PranayG/HowToCalibrate/assets/9202531/29e549b6-4107-475c-ad4b-c7fd9d0dc6ea" alt="Calibrate_HandEye" width="400"/>
 
 **16.** Leaving the solver name same, click on "Save the camera pose" option. This will create a launch file of all the TFs of the calibrated Eye-in-hand transformations
 
