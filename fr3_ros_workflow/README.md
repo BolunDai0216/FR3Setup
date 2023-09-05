@@ -13,4 +13,4 @@ This set of documents describes the system setup and calibration procedure for t
 ## Calibration
 
 - [Vicon Calibration]()
-- [Camera Calibration](camera_calibration/README.md)
+- [Camera Calibration](../camera_calibration/README.md)
