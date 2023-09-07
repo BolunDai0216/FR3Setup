@@ -26,7 +26,7 @@ This guide provides step-by-step instructions for configuring a the FR3  network
 
     c. Set the Net mask as `255.255.255.0`.
 
-    d. Click **NEXT**.
+    d. Click NEXT.
 
 **5.** Click **NEXT** again and confirm the settings.
 
