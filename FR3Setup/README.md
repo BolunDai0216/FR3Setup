@@ -22,6 +22,10 @@ This guide provides step-by-step instructions for configuring a the FR3  network
 
     a. Uncheck the DHCP client server under the Shop Floor Plan.
 
+![image](https://github.com/PranayG/HowToCalibrate/assets/9202531/cb18c212-9fcf-4d12-8d9d-678c3ecef3a4)
+
+
+
     b. Enter the IP address as `10.42.0.2`.
 
     c. Set the Net mask as `255.255.255.0`.
