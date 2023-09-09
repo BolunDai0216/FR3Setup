@@ -110,7 +110,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Under `Set Volume Origin`, press start and then `Set origin`. You should be able to see the wand. You can now switch off the wand and keep it aside.
 
-- If you do not see the wand markers, go to the `Object` menu, and under `Object Tracking Mode`, make sure `Track` is unselected.
+- If the wand markers are not visible in the window, go to the `Object` menu, and under `Object Tracking Mode`, make sure `Track` is unselected.
 
 ```{image} ../imgs/track_mode_selection.png
 :alt: Track mode selection
