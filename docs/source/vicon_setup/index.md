@@ -4,7 +4,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 ## Getting Started
 
-```{figure} ../imgs/vicon_system_switches.png
+```{figure} ../imgs/getting_started_vicon_system_switches.png
 :alt: Vicon System Switches
 :class: bg-primary mb-1
 :width: 80%
@@ -12,7 +12,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 **Step 1: Turn on the 3 switches.**
 ```
 
-```{figure} ../imgs/3dperspective.png
+```{figure} ../imgs/getting_started_vicon_tracker.png
 :alt: Vicon Tracker
 :class: bg-primary mb-1
 :width: 80%
@@ -20,7 +20,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 **Step 2: Open Vicon Tracker 3.10.0**
 ```
 
-```{figure} ../imgs/vicon_tracker.png
+```{figure} ../imgs/getting_started_vicon_tracker_controls.png
 :alt: Vicon Tracker Controls
 :class: bg-primary mb-1
 :width: 80%
@@ -141,7 +141,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
     
 -  Use a minimum of > 3 markers to define an object (e.g., on a plane board, put 5 markers not symmetrical to each other; the 5th marker is placed randomly in between the 4 markers to keep track of the rotations of the board and break the symmetry).
 
-```{image} https://github.com/PranayG/HowToCalibrate/assets/9202531/aa1b070e-d30e-440d-973a-b2e78c085cbb
+```{image} ../imgs/object_tracking_marker_placement.png
 :alt: Marker Placement
 :class: bg-primary mb-1
 :width: 50%
@@ -150,8 +150,8 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - To define the object you wish to track, select all the markers by dragging your mouse over all the markers and press Alt. You can also select each marker by clicking and holding Ctrl.
 
-```{image} ../imgs/DefineObject.png
-:alt: Track mode selection
+```{image} ../imgs/object_tracking_define_object.png
+:alt: Object Definition
 :class: bg-primary mb-1
 :width: 80%
 :align: center
