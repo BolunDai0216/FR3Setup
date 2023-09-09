@@ -56,7 +56,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Under the Calibrate Menu, navigate to `Create Camera Masks` and click on 'Start`. This will disable all previous masks.
 
-```{image} https://github.com/PranayG/HowToCalibrate/assets/9202531/adc319f3-1553-47af-a1f2-ca4a5357b911
+```{image} ../imgs/calibrate_menu.png
 :alt: Calibrate Menu
 :class: bg-primary mb-1
 :width: 40%
@@ -87,7 +87,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Stop the process when you see the progress bars reach 100% and the light turns green.
 
-```{image} https://github.com/PranayG/HowToCalibrate/assets/9202531/ee981c3e-615c-49f2-808d-fdee73aa1839
+```{image} ../imgs/camera_progress_bar.png
 :alt: Camera Progress Bar
 :class: bg-primary mb-1
 :width: 40%
@@ -112,7 +112,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - If you do not see the wand markers, go to the `Object` menu, and under `Object Tracking Mode`, make sure `Track` is unselected.
 
-```{image} https://github.com/PranayG/HowToCalibrate/assets/9202531/9c1cec84-d56f-45a8-adaa-74be347dc4ac
+```{image} ../imgs/track_mode_selection.png
 :alt: Track mode selection
 :class: bg-primary mb-1
 :width: 80%
