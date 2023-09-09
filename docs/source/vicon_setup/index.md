@@ -34,7 +34,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Under the Systems tab, select `Calibrations` and choose `Strobes Off 240Hz` for calibration
 
-```{image} ../imgs/vicon_system.png
+```{image} ../imgs/calibrate_vicon_system.png
 :alt: Vicon System Tab
 :class: bg-primary mb-1
 :width: 40%
@@ -43,7 +43,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Grab the calibration wand.
    
-```{image} ../imgs/wand.jpg
+```{image} ../imgs/calibrate_wand.jpg
 :alt: Vicon System Switches
 :class: bg-primary mb-1
 :width: 80%
@@ -69,7 +69,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Switch on the wand in continuous mode and move it around in as many different positions and orientations as possible.
 
-```{image} ../imgs/camera_calibrate_vicon.png
+```{image} ../imgs/calibrate_camera_calibrate_vicon.png
 :alt: Calibration Process
 :class: bg-primary mb-1
 :width: 80%
@@ -78,7 +78,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Move the wand to cover the maximum window area possible. You need as many patterns as possible to be seen on the screen. The first box below shows many black-colored patches. These need to be filled as much as the image under it by moving the wand continuously.
 
-```{image} ../imgs/comparingScreens.png
+```{image} ../imgs/calibrate_comparing_screens.png
 :alt: Calibration Process
 :class: bg-primary mb-1
 :width: 40%
@@ -87,7 +87,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Stop the process when you see the progress bars reach 100% and the light turns green.
 
-```{image} ../imgs/camera_progress_bar.png
+```{image} ../imgs/calibrate_camera_progress_bar.png
 :alt: Camera Progress Bar
 :class: bg-primary mb-1
 :width: 40%
@@ -96,7 +96,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - Make sure the **image error** is less than **0.5px**.
 
-```{image} ../imgs/imageError.png
+```{image} ../imgs/calibrate_image_error.png
 :alt: Camera Progress Bar
 :class: bg-primary mb-1
 :width: 40%
@@ -112,7 +112,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - If the wand markers are not visible in the window, go to the `Object` menu, and under `Object Tracking Mode`, make sure `Track` is unselected.
 
-```{image} ../imgs/track_mode_selection.png
+```{image} ../imgs/calibrate_track_mode_selection.png
 :alt: Track mode selection
 :class: bg-primary mb-1
 :width: 80%
@@ -121,7 +121,7 @@ This document provides a step-by-step guide for using the Vicon Tracking System 
 
 - The cameras are calibrated and the axes are marked below.
 
-```{image} ../imgs/setOrigin.jpg
+```{image} ../imgs/calibrate_set_origin.jpg
 :alt: Track mode selection
 :class: bg-primary mb-1
 :width: 80%
